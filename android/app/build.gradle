@@ -27,6 +27,7 @@ android {
     compileSdkVersion 34
     ndkVersion flutter.ndkVersion
 
+
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
@@ -42,6 +43,7 @@ android {
 
     defaultConfig {
         // TODO: Specify your own unique Application ID (https://developer.android.com/studio/build/application-id.html).
+        multiDexEnabled true
         applicationId "com.vgt.travel_near_me"
         // You can update the following values to match your application needs.
         // For more information, see: https://docs.flutter.dev/deployment/android#reviewing-the-gradle-build-configuration.
@@ -58,10 +60,16 @@ android {
             signingConfig signingConfigs.debug
         }
     }
+    lintOptions {
+        baseline file("lint-baseline.xml")
+        abortOnError false
+    }
 }
 
 flutter {
     source '../..'
 }
 
-dependencies {}
+dependencies {
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+}

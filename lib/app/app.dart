@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../config/app_theme/text_theme.dart';
-import '../features/search_plcae/presentation/views/search_place.dart';
+import '../features/search_place/presentation/views/search_place.dart';
 
 class TravelNearMe extends StatefulWidget {
   const TravelNearMe({super.key});
